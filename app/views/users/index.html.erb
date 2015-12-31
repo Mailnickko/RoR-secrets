@@ -1,0 +1,33 @@
+<!-- <h1>Home Page</h1>
+
+<p><%= @user.name %></p>
+
+<button><a href="/users/<%= @user.id %>/edit">Edit Profile</a></button>
+
+
+<form action= '/secrets' method='post'>
+    <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+    <input type='hidden' name="secrets[user_id]" value="<%= @user.id %>">
+    <label for='new_secret'>New Secret</label>
+    <textarea id='new_secret' name='secrets[content]' rows='5' cols='20' ></textarea>
+    <input type='submit' value='Create Secret'>
+</form>
+
+
+
+<h3>Secrets</h3>
+
+<% @secret.each do |s| %>
+    
+    <p><%= s.content %></p>
+
+    <form action ='/secrets/<%=s.id %>' method='post'>
+        <input type='hidden' name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type='hidden' name="user_id" value="<%= @user.id %>">
+        <input type='hidden' name="_method" value="delete">
+        <input type="submit" value="Delete">
+    </form>
+            
+<% end %>
+
+<!-- @user.id works here because we have passed it along already --> -->
